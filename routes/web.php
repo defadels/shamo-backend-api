@@ -27,7 +27,7 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('products', [ProductController::class, 'all']);
-Route::get('categories', [ProductCategoryController::class, 'all']);
+// Route::get('products', [ProductController::class, 'all']);
+// Route::get('categories', [ProductCategoryController::class, 'all']);
 
-Route::get('register', [UserController::class, 'register']);
+// Route::get('register', [UserController::class, 'register']);
