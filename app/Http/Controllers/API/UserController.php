@@ -4,8 +4,12 @@ namespace App\Http\Controllers\API;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Helpers\ResponseFormatter;
+use Laravel\Fortify\Rules\Password;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+
 
 class UserController extends Controller
 {
@@ -71,7 +75,7 @@ class UserController extends Controller
 
             $tokenResult = $user->createToken('authToken')->plainTextToken;
 
-            return ResponseFormatted::success([
+            return ResponseFormatter::success([
                 'access_token' => $tokenResult,
                 'token_type' =>'Bearer',
                 'user' => $user
